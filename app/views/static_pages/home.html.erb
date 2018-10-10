@@ -1,11 +1,10 @@
 <% provide(:title, "Home") %>
-
 <div class="center jumbotron">
   <h1>Welcome to Roy's Place</h1>
-
   <h2>
     This is the home page for Roy's Place and it needs more work.
-    
   </h2>
-
-  
+  <%= link_to "Register to order pickup or delivery!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+<%= link_to image_tag("roysplacelogo.png", alt: "Roy's Place logo"),
+            'http://roysplace.com/' %>

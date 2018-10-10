@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+nemo:
+  first_name: Nmanja
+  last_name: Djuric
+  phone_number: 2406434208
+  birth_day: Date.parse('December, 4')
+  email: "mr.jamesbond.com"
+  text_club: true 
+  email_club: true
+  terms: true
+
