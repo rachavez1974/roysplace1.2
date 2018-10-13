@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/newreservation', to: 'reservations#new'
+
   get 'users/new'
 
   root 'static_pages#home'
@@ -12,5 +14,6 @@ Rails.application.routes.draw do
     resources :addresses
   end
   get  '/signup',   to: 'users#new'
+  post '/signup',   to: 'users#create'
    
 end
