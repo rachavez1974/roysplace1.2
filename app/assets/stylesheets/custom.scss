@@ -2,6 +2,116 @@
 @import "bootstrap";
 
 
+body {
+  font-family: "Raleway", sans-serif;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #b8b8b8;
+
+}
+
+
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  line-height: 1.45;
+  color: #000;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+}
+
+
+
+
+.btn {
+  border-radius: 4px;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+}
+
+.btn.btn-lg {
+  font-size: 16px !important;
+  padding: 13px 40px !important;
+}
+
+.btn.btn-sm {
+  padding: 10px 20px;
+  font-size: 12px;
+}
+
+.btn.btn-primary {
+  border-radius: 0px;
+}
+
+.btn.btn-secondary {
+  border: 2px solid #ccc;
+  background: none;
+  border-radius: 0px;
+  color: #999999;
+}
+
+.btn.btn-secondary:hover {
+  background: #FDA403;
+  border-color: #FDA403;
+  color: #fff;
+}
+
+.btn:before {
+  display: none;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn.btn-primary {
+  background: #FDA403;
+  border-color: #FDA403;
+  color: #fff;
+}
+
+.btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
+  border-color: #cb8402;
+  background: #cb8402;
+}
+
+.btn.btn-outline-white {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: none;
+  border-radius: 0px;
+  border-width: 2px;
+}
+
+.btn.btn-outline-white:hover, .btn.btn-outline-white:focus, .btn.btn-outline-white:active {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+}
+
+.form-control {
+  border: none;
+  height: 55px !important;
+  background: #e6e6e6 !important;
+  color: #000 !important;
+  font-size: 18px;
+  border-radius: 0px;
+}
+
+textarea.form-control {
+  height: inherit !important;
+}
+
+
+
+
+
+
 /* universal */
 
 body {
@@ -90,11 +200,6 @@ p {
   text-decoration: none;
 }
 
-img {
-    width: 5%;
-    height: auto;
-}
-
 
 /* footer */
 
@@ -176,13 +281,11 @@ $gray-medium-light: #eaeaea;
   
 }
 
-.btn{
-  margin: auto;
-  background-color: darkblue;
-  color: white;
+
+
+.logoHome {
+  background-image: image-url('app/assets/images/bg_3.jpg');
 }
-
-
 
 
 

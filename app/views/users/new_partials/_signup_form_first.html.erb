@@ -1,5 +1,4 @@
-
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for(@user, url: signup_path) do |f| %>
 <%= f.error_notification %> 
 <div class="rightsignup">  
   <div class="container">
@@ -46,7 +45,7 @@
       <div class="container">
         <div class="row">
           <div class=" btn">
-            <%= f.button :submit %>
+            <%= f.button :submit, class: "btn btn-lg btn-primary" %>
           </div>
         </div>
       </div>

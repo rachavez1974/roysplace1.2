@@ -1,10 +1,14 @@
-<% provide(:title, "Home") %>
-<div class="center jumbotron">
+
+<div class="center jumbotron" style="background-image: url(<%= asset_path'bg_3.jpg' %>); background-size: 100%; height: 500px;">
   <h1>Welcome to Roy's Place</h1>
-  <h2>
-    This is the home page for Roy's Place and it needs more work.
-  </h2>
-  <%= link_to "Register to order pickup or delivery!", signup_path, class: "btn btn-lg btn-primary" %>
+  <br>
+  <% provide(:title, "Home") %>
+<%= link_to "Register to Order Pickup or Delivery!", signup_path, class: "btn btn-lg btn-primary" %>
+  <br>
+  <br>
+
+  <%= link_to "Schedule your Booking", newreservation_path, class: "btn btn-lg btn-primary" %>
 </div>
 <%= link_to image_tag("roysplacelogo.png", alt: "Roy's Place logo"),
-            'http://roysplace.com/' %>
+'http://roysplace.com/' %>
+
