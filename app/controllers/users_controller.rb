@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def new
     @user = User.new()
-    #@user.addresses.new()
     @user.addresses.build
   end
 
@@ -13,9 +12,7 @@ class UsersController < ApplicationController
 
 
     @user = User.new(user_params)
-    #@user.addresses.first.user_id = @user.id
-    
-   
+       
     if@user.save  
       flash[:success] = "Welcome to Roy's Place!"
       redirect_to @user
