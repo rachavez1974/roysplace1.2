@@ -42,8 +42,6 @@ test "Should allowed signup with correct information" do
 
   follow_redirect!
   assert_template 'users/show'
-  assert_not flash.empty?
-
 end
 
 end

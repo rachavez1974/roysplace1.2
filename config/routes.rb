@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  get     '/login', to: 'sessions#new'
+  post    '/login', to: 'sessions#create'
+  delete  '/login', to: 'sessions#destroy'
+
   get '/newreservation', to: 'reservations#new'
 
   get 'users/new'
