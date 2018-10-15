@@ -11,16 +11,11 @@ class UsersController < ApplicationController
   def create  
     @user = User.new(user_params)
     respond_to do |format|   
-      if@user.save  
-        #flash[:success] = "Welcome to Roy's Place!"
+      if@user.save
+        log_in @user  
         format.html { redirect_to @user, notice: 'Welcome to Roy\'s Place!' }
-        format.js
-        format.json { render json: @user, status: :created, location: @user }
-        #redirect_to @user
       else
-        #render 'new'
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html {render action: 'new'}    
       end
     end
   end 
