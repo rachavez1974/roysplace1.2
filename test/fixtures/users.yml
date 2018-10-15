@@ -8,5 +8,7 @@ nemo:
   email: "mr.jamesbond.com"
   text_club: true 
   email_club: true
+  password_digest: <%= User.digest('password') %>
   terms: true
+
 

@@ -41,7 +41,9 @@ test "Should allowed signup with correct information" do
   end
 
   follow_redirect!
+  assert_select "div.alert", "Welcome to Roy's Place!"
   assert_template 'users/show'
+  assert is_logged_in?
 end
 
 end
