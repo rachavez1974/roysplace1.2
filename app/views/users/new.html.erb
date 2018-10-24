@@ -1,4 +1,6 @@
-<%= provide(:title, 'Sign up') %>
-<h1><strong>Create Your Account</strong></h1>
-  <%= render 'users/new_partials/signup_form_layout' %>
+<% provide(:title, 'Sign up') %>
+<% provide(:button_text, 'Create my account') %>
+<% provide(:path, signup_path) %> 
+
+  <%= render 'users/partials/info_form_layout' %>
   

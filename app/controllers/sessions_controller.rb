@@ -5,16 +5,15 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
-    respond_to do |format|
       if @user && @user.authenticate(params[:session][:password])
         log_in(@user)
-        params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)  
-        format.html { redirect_to @user, notice: "Welcome back #{@user.first_name}"}
+        params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
+        flash[:success] = "Welcome back #{@user.first_name}"   
+        redirect_to @user
       else
         flash.now[:danger] = 'Invalid email/password combination'
-        format.html {render action: 'new'}
+        render  'new'
       end    
-    end
   end
   
   def destroy

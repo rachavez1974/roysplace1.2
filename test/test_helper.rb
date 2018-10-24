@@ -9,7 +9,7 @@ class ActiveSupport::TestCase
   fixtures :all
   include ApplicationHelper
 
-  def log_in_as(user)
+  def log_in_as(user) 
     session[:user_id] = user.id
   end
 
