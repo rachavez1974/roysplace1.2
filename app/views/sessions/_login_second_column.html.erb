@@ -1,17 +1,28 @@
-<div class="container">
- <div class="row">
-  <div class= "col-md-5">
-    <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :email  %>
-    <%= f.email_field :email, placeholder: "Type your email here", class: 'form-control' %>
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder: "Type your password here", class: 'form-control' %>
-    <input type="checkbox" onclick="showMyPassword('session_password')">Show Password
-    <br>
-    <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  <div class="container">
+   <div class="row">
+    <div class= "col-md-6">
+      <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email  %>
+      <%= f.email_field :email, placeholder: "Type your email here", class: 'form-control' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "Type your password here", class: 'form-control' %>
+      <div class="rightsignup">  
+        <div class="container">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= f.label :remember_me, class: "checkbox inline" do %>
+              <%= f.check_box :remember_me %>
+              <span>Remember me on this computer</span>
+              <div class="form-group col-md-5">
+              <input type="checkbox" onclick="showMyPassword('session_password')">Show Password
+            </div>
+              <% end %>    
+            </div>
+          </div>
+        </div>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+        <% end %>
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
+    </div>
   </div>
-</div>
-</div>
