@@ -1,12 +1,25 @@
 Rails.application.routes.draw do
   
-  get     '/login', to: 'sessions#new'
-  post    '/login', to: 'sessions#create'
-  delete  '/logout', to: 'sessions#destroy'
+  
+  get '/admin/login', to: 'sessions#new_admin'
+  post '/admin/login', to: 'sessions#create_new_admin'
 
-  get '/newreservation', to: 'reservations#new'
+  get 'admin/addcustomer', to: 'admin#new_user_form'
+  post 'admin/create_customer', to: 'admin#create_new_user'
+  get  'admin/show_customer',   to: 'admin#show_customer'
 
-  get 'users/new'
+  get 'admin/create'
+
+  get 'admin/update'
+
+  get 'admin/edit'
+
+  get 'admin/destroy'
+
+  get 'orders/new'
+
+  get 'orders/show'
+  
 
   root 'static_pages#home'
   get '/about',   to: 'static_pages#about'
@@ -18,7 +31,20 @@ Rails.application.routes.draw do
   resources :users do
     resources :addresses
   end
+
   get  '/signup',   to: 'users#new'
   post '/signup',   to: 'users#create'
+
+  get     '/user/login',  to: 'sessions#new_user'
+  post    '/user/login',  to: 'sessions#create_new_user'
+  delete  '/logout', to: 'sessions#destroy'
+
+  get '/newreservation', to: 'reservations#new'
+
+  resources :items
+  get  '/additem',       to: 'items#new'
+  post '/additem',       to: 'items#create'
+  get 'admin/dashboard', to: 'admin#dashboard'
+  
    
 end

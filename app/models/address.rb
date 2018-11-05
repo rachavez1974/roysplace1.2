@@ -11,6 +11,7 @@ class Address < ApplicationRecord
   validates  :state, presence: true, length: {in: 2..50}
   validates  :zipcode, presence: true, length: {maximum: 5}
 
+  #returns true if a string has any of these words
   def type_of_unit?
     "Apt, Floor, Suite".split(",").include?(unit_type)
   end

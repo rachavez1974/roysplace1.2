@@ -3,9 +3,11 @@
   <h1>Welcome to Roy's Place</h1>
   <br>
   <% provide(:title, "Home") %>
-<%= link_to "Register to Order Pickup or Delivery!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% if !logged_in? %>
+ <%= link_to "Register to Order Pickup or Delivery!", signup_path, class: "btn btn-lg btn-primary" %>
   <br>
   <br>
+  <% end %>
 
   <%= link_to "Schedule your Booking", newreservation_path, class: "btn btn-lg btn-primary" %>
 </div>

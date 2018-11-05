@@ -34,11 +34,10 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   #                               number: "301", city: "Rome", state: "Italia", 
   #                               zipcode: 12345  } } } 
 
-  #   assert_not flash.empty?
+  #   assert flash.empty?
   #   assert_redirected_to @user
   #   @user.reload
   #   assert_equal "Razor", @user.first_name
   #   assert_equal "razorcut@gmail.com", @user.email
-
   # end
 end

@@ -7,11 +7,11 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "Login with wrong information" do
-    get login_path
-    assert_template 'sessions/new'
-    post login_path, params: {session: {email: "", password: ""}}
-    assert_template 'sessions/new'
+  test "Login with wrong information regular customer" do
+    get user_login_path
+    assert_template 'sessions/new_user'
+    post user_login_path, params: {session: {email: "", password: ""}}
+    assert_template 'sessions/new_user'
     assert_not flash.empty?
     assert_select "div.alert", "Invalid email/password combination"
     get root_path
@@ -19,16 +19,16 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test "Login with right information followed by logout" do
-    get login_path
-    assert_template 'sessions/new'
-    post login_path, params: {session: {email: @user.email,
+    get user_login_path
+    assert_template 'sessions/new_user'
+    post user_login_path, params: {session: {email: @user.email,
                                         password: 'password'}}
 
     assert is_logged_in?
     assert_redirected_to @user
     follow_redirect!
     assert_template 'users/show'
-    assert_select "a[href=?]", login_path, count: 0
+    assert_select "a[href=?]", user_login_path, count: 0
     assert_select "a[href=?]", user_path(@user)
     assert_select "a[href=?]", logout_path
     delete logout_path
@@ -37,7 +37,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     # Simulate a user clicking logout in a second window.
     delete logout_path
     follow_redirect!
-    assert_select "a[href=?]", login_path
+    assert_select "a[href=?]", user_login_path
     assert_select "a[href=?]", logout_path, count: 0
     assert_select "a[href=?]", user_path(@user), count: 0
 

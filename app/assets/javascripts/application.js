@@ -36,3 +36,19 @@ function showAptNumberBox(choice){
     user_addresses_attributes_0_number.style.display = 'block';
   
 }
+
+  function openSlideMenu(){
+      document.getElementById('side-menu').style.width = '250px';
+      document.getElementById('mainadmin').style.marginLeft = '250px';
+    }
+  function closeSlideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+      document.getElementById('mainadmin').style.marginLeft = '0';
+    }
+
+    
+
+
+
+     
+

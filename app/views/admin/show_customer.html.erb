@@ -1,0 +1,122 @@
+<% provide(:title, 'Admin Customer Profile') %>
+<div class="container bootstrap snippet">
+<div class="panel-body inf-content">
+    <div class="row">
+        <div class="col-md-4">
+            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/user-453533-fdadfd.png" data-original-title="Usuario"> 
+            <ul title="Ratings" class="list-inline ratings text-center">
+                <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <strong>Customer's Information</strong><br>
+            <div class="table-responsive">
+            <table class="table table-condensed table-responsive table-user-information">
+                <tbody>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                Customer's number                                                
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            <%= @user.id %>     
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-user  text-primary"></span>    
+                                Name                                                
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            <%= @user.first_name %>
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-user text-primary"></span>  
+                                Lastname                                                
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            <%= @user.last_name %>  
+                        </td>
+                    </tr>
+
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-phone text-primary"></span> 
+                                Phone Number                                                
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            <%= @user.phone_number %> 
+                        </td>
+                    </tr>
+
+
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-home text-primary"></span> 
+                                Street Address/Type/Number                                            
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            <%= @user.addresses.first.street_address %>
+                            <% @user.addresses.each do |p| %>
+  <li><%= p.street_address %></li>
+<% end %>
+                        </td>
+                    </tr>
+
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-home text-primary"></span> 
+                                Town/Zip/State                                           
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            Admin
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-envelope text-primary"></span> 
+                                Email                                                
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            <%= @user.email %>  
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                Last Time Ordered                                                
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            <%= @user.updated_at %>
+                        </td>
+                    </tr>
+                                                    
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>                                

@@ -9,11 +9,8 @@
       <div class="form-group col-md-2">
         <%= addrs.input :address_type, collection: [["Business", "business"], ["Military", "military"], ["Residence", "residence"], ["University", "university"]] %>
       </div>
-
-
       <div class="form-group col-md-2">
         <%= addrs.input :unit_type, as: :select, collection: [["None", "none"], ["Apt", "apt"], ["Floor", "floor"], ["Suite", "Suite"]], :input_html => {:onchange => "showAptNumberBox('user_addresses_attributes_0_unit_type');"} %>
-        
       </div>
       <div class="form-group col-md-2">
         <%= addrs.input :number %>
@@ -30,9 +27,11 @@
       <div class="form-group col-md-2">
         <%= addrs.input :zipcode %>
       </div>
-    </div>
-  </div>  
+
   <% end %>
+
+    </div>
+  </div> 
 
 
 

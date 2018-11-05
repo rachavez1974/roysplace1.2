@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-left navbar-inverse">
       <div class="container">
         <%= link_to "Roy's Place", '#', id: "logo" %>
         <nav>
@@ -12,7 +12,7 @@
             <% if logged_in? %>
             <%= render 'layouts/drop_down/account' %>
             <% else %>
-            <li><%= link_to "LogIn", login_path %></li>
+            <li><%= link_to "LogIn", user_login_path %></li>
             <% end %>
           </ul>
         </nav>

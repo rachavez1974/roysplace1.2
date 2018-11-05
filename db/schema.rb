@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181017185341) do
+ActiveRecord::Schema.define(version: 20181028000341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,37 @@ ActiveRecord::Schema.define(version: 20181017185341) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "item_name"
+    t.text "description"
+    t.decimal "price"
+    t.string "modifiers"
+    t.boolean "availability"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "menu"
+    t.integer "section"
+  end
+
+  create_table "ordered_items", force: :cascade do |t|
+    t.integer "item_number"
+    t.integer "quantiy"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_ordered_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "tax_rate"
+    t.decimal "sub_total"
+    t.decimal "total"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -42,8 +73,11 @@ ActiveRecord::Schema.define(version: 20181017185341) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "ordered_items", "orders"
+  add_foreign_key "orders", "users"
 end

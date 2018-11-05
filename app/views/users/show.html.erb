@@ -1,7 +1,7 @@
 <% provide(:title, 'Profile') %>
 
-<%= @user.first_name %>, 
-<%= @user.last_name %>, 
+<%= @user.first_name %> 
+<%= @user.last_name %>
 <%= @user.email %>
 <br>
 <%= link_to "Wanna edit ur profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>

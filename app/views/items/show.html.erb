@@ -1,0 +1,18 @@
+<% provide(:title, 'Show Item') %>
+<h1></h1>
+<ul class="list-group">
+  <li class="list-group-item active">Item's Name: <%= @item.item_name %> </li>
+  <li class="list-group-item ">Item's Description: <%= @item.description %></li>
+  <li class="list-group-item active">Item's Price: <%= @item.price %></li>
+  <li class="list-group-item">Item's Modifiers: <%= @item.modifiers %></li>
+  <li class="list-group-item active">Item's Menu: <%= @item.menu %></li>
+  <li class="list-group-item">Item's Section: <%= @item.section %></li>
+  <% if @item.availability %>
+  <li class="list-group-item active">Item's Availability: Yes</li>
+  <% else %>
+  <li class="list-group-item active">Item's Availability: No</li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Edit", edit_item_path(@item), class: "btn btn-lg btn-primary" %>

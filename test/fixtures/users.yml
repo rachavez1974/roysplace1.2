@@ -10,6 +10,7 @@ nemo:
   email_club: true
   password_digest: <%= User.digest('password') %>
   terms: true
+  admin: false
 
 razor:
   first_name: Razor
@@ -21,4 +22,5 @@ razor:
   email_club: true
   password_digest: <%= User.digest('password') %>
   terms: true
+  admin: false
 
